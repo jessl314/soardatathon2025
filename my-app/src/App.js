@@ -1,27 +1,32 @@
-import './App.css';
 import React from 'react';
-import Navbar from './navbar.js';
+import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import DataPage from './pages/DataPage';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <header className="welcome-to-mindmetrics">
-        <p>
-          This is the begining of the page <code>src/App.js</code>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <nav className="navbar">
+          <div className="logo">
+            <Link to="/">Crime Rates</Link>
+          </div>
+          <div className="nav-links">
+            <Link to="/">Home</Link>
+            <Link to="/data">Data</Link>
+            <Link to="/resources">Resources</Link>
+          </div>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/data" element={<DataPage />} />
+          <Route path="/data2" element={<DataPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
-
 
 export default App;

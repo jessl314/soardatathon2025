@@ -1,42 +1,66 @@
 import React from 'react';
 
 function Navbar() {
-    const navbarStyle = {
+    const [activeRegion, setActiveRegion] = React.useState('navbar')
+
+    const regionContent = {
+        home: <div><h2>Home Content</h2><p>This is the content for the home tab.</p></div>,
+        resources: <div><h2>Resources Content</h2><p>This is the content for the contact tab.</p></div>,
+        data : <div><h2>Data Content</h2><p>This is the content for the resources tab.</p></div>,
+    };
+    const mapNavStyles = {
         display: 'flex',
         justifyContent: 'space-between',
-        padding: '10px 20x',
+        padding: '20px 40px',
         backgroundColor: '#f7364a',
         color: '#f1e9dd',
         fontFamily: 'Arial, sans-serif',
     };
-
-    const navLinksStyle = {
-        display: 'flex',
-        gap: '50px',
-        alignItems: 'center',
+    const regionStyle = {
+        padding: '10px 20px',
+        cursor: 'pointer',
+        backgroundColor: '#f1e9dd',
+        color: '#f7364a',
+        borderRadius: '10px',
         fontSize: '16px',
+        textAlign: 'center',
+        margin: '0 10px',
+        transition: 'background-color 0.3s ease, color 0.3s ease',
     };
 
-    const logoStyle = {
-        fontSize: '24px',
-        fontWeight: 'bold',
-    };
-
-    const searchIconStyle = {
-        fontSize: '20px',
-        marginLeft: 'auto',
+    const activeRegionStyle = {
+        ...regionStyle,
+        backgroundColor: '#f7364a',
+        color: '#f1e9dd', // Highlight active region
     };
 
     return (
-        <div style={navbarStyle}>
-            <div style={logoStyle}>
-                🌐 <span style={{ marginLeft: '0 20px' }}>Crime Website</span>
+        <div>
+            <div style={mapNavStyles}>
+                {/* These are clickable regions that behave like map links */}
+                <div
+                    onClick={() => setActiveRegion('home')}
+                    style={activeRegion === 'home' ? activeRegionStyle : regionStyle}
+                >
+                    Home
+                </div>
+                <div
+                    onClick={() => setActiveRegion('data')}
+                    style={activeRegion === 'data' ? activeRegionStyle : regionStyle}
+                >
+                    Data
+                </div>
+                <div
+                    onClick={() => setActiveRegion('resources')}
+                    style={activeRegion === 'resources' ? activeRegionStyle : regionStyle}
+                >
+                    Resources
+                </div>
             </div>
-            <div style={navLinksStyle}>
-                <span>Home Page</span>
-                <span>Data</span>
-                <span>Resources</span>
-                <span style={searchIconStyle}>🔍</span>
+
+            {/* Display content based on the active region */}
+            <div style={{ backgroundColor: '#100f0eff', padding: '20px', borderRadius: '5px', marginTop: '20px' }}>
+                {regionContent[activeRegion]}
             </div>
         </div>
     );
