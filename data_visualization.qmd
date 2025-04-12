@@ -11,7 +11,24 @@ Quarto enables you to weave together content and executable code into a finished
 
 ```{r}
 library(tidyverse)
-glimpse(crimes)
+
+columns_to_remove <- c(
+  "Serious Violent Crimes (per 100,000 Population), 2022",
+ "Lower 95% Confidence Limit, 2022",
+ "Upper 95% Confidence Limit, 2022",
+ "Relative Standard Error, 2022"
+)
+
+cleaned_data <- crimes |>
+ select(-all_of(columns_to_remove))
+
+print("\nCleaned Data (with selected columns):")
+print(cleaned_data)
+
+print("\nNames of cleaned data:")
+print(names(cleaned_data))
+
+glimpse(cleaned_data)
 ```
 
 
