@@ -29,6 +29,7 @@ print("\nNames of cleaned data:")
 print(names(cleaned_data))
 
 glimpse(cleaned_data)
+
 ```
 
 
