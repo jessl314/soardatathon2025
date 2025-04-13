@@ -6,10 +6,10 @@ function CrimeStatsPage() {
   return (
     <div className="crime-stats-page">
       <section className="content-section">
-        <h1>Crime Statistics</h1>
+        <h1>Median Household Income & Violent Crime Rates Datasets Relationship</h1>
 
         <div className="dataset-container">
-          <h2 className="dataset-title">Dataset 1</h2>
+          <h2 className="dataset-title">Income vs. Crime Data</h2>
 
           <div className="dataset-content">
             <div className="image-container">
@@ -21,21 +21,18 @@ function CrimeStatsPage() {
             </div>
 
             <div className="text-container">
-              <h3>Image 1</h3>
-              <p>
-                Our comprehensive analysis reveals key patterns in criminal activities
-                across different regions. This dataset showcases important trends in:
-              </p>
+              <h3>Analysis</h3>
               <ul>
-                <li>Temporal distribution of crimes</li>
-                <li>Geographic hotspots</li>
-                <li>Type and frequency of incidents</li>
-                <li>Demographic correlations</li>
+                <li><strong>Serious Crime Definition:</strong> </li>
+                <p>“Serious violent crimes consist of Part 1 offenses as defined by the U.S. Department of Justice’s Uniform Reporting Statistics. These include murders, nonnegligent homicides, rapes (legacy and revised), robberies, and aggravated assaults.” </p>
+
               </ul>
-              <p>
-                These insights help law enforcement agencies and policymakers make
-                informed decisions about resource allocation and prevention strategies.
-              </p>
+              <ul>
+                <li><strong>Relationship:</strong> </li>
+                <p>
+                For the relationship between serious crime and income we found that with a correlation coefficient of -0.57986 (r value) that there is a moderately strong negative correlation as the coefficient is between -0.5 and -0.7. This suggests somewhat that as median income of a city in LA county increases the amount of serious crime committed as defined above decreases. Based on the determination coefficient (R^2) of 0.336 we found that approximately 33.6% of the variation can be explained by median income. This implies that a substantial portion of the variation (about 67%) can be explained by other factors of serious crime such as low education. 
+                </p>
+              </ul>
             </div>
           </div>
         </div>

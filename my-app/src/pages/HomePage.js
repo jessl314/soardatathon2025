@@ -11,41 +11,46 @@ function HomePage() {
       name: "Arena Galeana Oregon",
       role: "Arena is a first year student studying computer science and engineering, with a focus in biomedical engineering. She is a passionate reader and athlete when not developing websites.",
       image: arenaImage, // You'll need to add actual images to your public/images folder
+      linkedin: "https://www.linkedin.com/in/arena-galeana-oregon"
     },
     {
       name: "Meera Phadnis",
       role: "Meera is a first year undeclared student and planning to double major in economics and data science. Outside of school, she is a skilled tennis player and robotics enthusiast.",
       image: meeraImage,
+      linkedin: "https://www.linkedin.com/in/meeraphadnis/"
     },
     {
       name: "Jessica Liao",
       role: "Jessica is a second year majoring in computer science, with a minor in statistics. She is also an avid anime and tv enthusiast, as well as dabbling in crafting and crochet.",
       image: jessicaImage,
+      linkedin: "https://www.linkedin.com/in/jessica-liao-089359244/"
     },
     {
       name: "Sabella Habtemariam",
       role: "Sabi is an undeclared first year, aiming to major in data science with a minor in philosophy. She loves to read in her spare time, as well as listening to music for her radio show. ",
       image: sabiImage,
+      linkedin: "https://www.linkedin.com/in/sabella-habtemariam-b594a9358/"
     },
-    // Add more team members as needed
   ];
+    // Add more team members as needed
+
 
   return (
     <div className="home-page">
       <section className="hero-section">
-        <h1>Fault Lines</h1>
+        <h1><strong>Fault Lines</strong></h1>
       </section>
       <section className="our-mission-section">
         <h2>Our Mission</h2>
         <div className="mission-content">
-          <p>LA is a beautiful city, full of cultural landmarks and natural landscapes, as well as housing one of the most diverse populations in the US. However, in all of LA’s majesty, the city still struggles with issues of poverty and wealth inequality. These then exacerbate other issues of mental health and violent crime, which propel the cycle of poverty and subpar living conditions.</p>
+          <p>LA is a beautiful city, full of cultural landmarks and natural landscapes, as well as housing one of the most diverse populations in the US. However, in all of LA's majesty, the city still struggles with issues of poverty and wealth inequality. These then exacerbate other issues of mental health and violent crime, which propel the cycle of poverty and subpar living conditions.</p>
           <p>In Fault Lines, we aim to express these inequities with data collected by California Health Projects, and by overlaying these sets, we can find the areas most impacted by socio-economic inequity. We focus on three main datasets to assess: median income, violent crime rate per one hundred thousand, and the rate of adults with depression PER NUMBER. With these key datasets, all measured by counties in LA, we can visualise an image of how wealth and wealth gaps correlate with general life quality. Finally, we use this data to highlight communities which need more resources and support to promote economic growth and general welfare; and we link some of these grassroots efforts in order to offer help in these areas.</p>
         </div>
       </section>
 
       <section className="team-section">
         <h2>Who We Are</h2>
-        <p className="team-intro">Fault Lines is a ragtag group of students all united by our drive to learn about data literacy. We come from all different backgrounds and levels of skill in programming, but together we were able to create this website in just 36 hours at UCI’s annual datathon. We aligned on our interests in mental health and using data as a tool to spread awareness{','} which allowed us to conceive this project.</p>
+        <p className="team-intro">Fault Lines is a ragtag group of students all united by our drive to learn about data literacy. We come from all different backgrounds and levels of skill in programming, but together we were able to create this website in just 36 hours at UCI's annual datathon. We aligned on our interests in mental health and using data as a tool to spread awareness{','} which allowed us to conceive this project. To know more about us, we invite you to hover over our names which can take you our Linkedins.</p>
         <div className="team-grid">
           {teamMembers.map((member, index) => (
             <div className="team-member" key={index}>
@@ -53,7 +58,16 @@ function HomePage() {
                 <img src={member.image} alt={member.name} />
               </div>
               <div className="member-info">
-                <h3>{member.name}</h3>
+                <h3>
+                  <a 
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="linkedin-link"
+                  >
+                    {member.name}
+                  </a>
+                </h3>
                 <p>{member.role}</p>
               </div>
             </div>

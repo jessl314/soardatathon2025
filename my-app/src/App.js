@@ -28,9 +28,9 @@ function App() {
               <Link to="/data">Data</Link>
               {isDataHovered && (
                 <div className="dropdown-content">
-                  <Link to="/data/crime-stats">Crime Statistics</Link>
-                  <Link to="/data/trends">Trends Analysis</Link>
-                  <Link to="/data/conclusion">Conclusion</Link>
+                  <Link to="/data/crime-stats">Income & Crime Correlation</Link>
+                  <Link to="/data/trends">Income & Depression Correlation</Link>
+                  <Link to="/data/conclusion">In Summation</Link>
                 </div>
               )}
             </div>
