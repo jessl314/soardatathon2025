@@ -46,6 +46,9 @@ cleaned_records <- cleaned_data %>%
   filter(!if_all(all_of(records_to_remove), ~ . == "NA"))
 print(cleaned_records)
 
+cleaned_records$Name <- gsub("City of ", "", cleaned_records$Name)
+cleaned_records$Name <- gsub("Unincorporated - ", "", cleaned_records$Name)
+
 medincrecords_to_remove <- c(
   "Median Household Income",
   "Lower 95% Confidence Limit",
