@@ -9,6 +9,7 @@ Quarto enables you to weave together content and executable code into a finished
 
 ## Running Code
 
+# cleaning data
 ```{r}
 library(tidyverse)
 
@@ -76,6 +77,7 @@ cleaned_medincrecords$Name <- gsub("Unincorporated - ", "", cleaned_medincrecord
 ```
 
 
+# bar plots
 ```{r}
 crimes_per_city_plot <- ggplot(cleaned_records, aes(x = Name, y = `Serious Violent Crimes (per 100,000 Population), 2018-2022`)) +
   geom_col(fill = "darkslategray4") +
@@ -101,16 +103,15 @@ ggsave("median_income_plot.png", median_income_plot, width = 10, height = 6)
   
 ```
 
-# panel.background = element_rect(fill = my_background_color), 
-# panel.grid.major = element_line(color = my_background_color), 
-#panel.grid.minor = element_line(color = my_background_color),
 
+# plot for income vs crime
 ``` {r}
 library(ggplot2)
 library(dplyr)
-merged_df <- left_join(cleaned_medincrecords, cleaned_medincrecords, by = "Name")
-income_vs_crime_plot <- ggplot(merged_df, aes(x = `Median Household Income`, y = `Median Household Income`)) +
+merged_df <- left_join(cleaned_medincrecords, cleaned_records, by = "Name")
+income_vs_crime_plot <- ggplot(merged_df, aes(x = `Median Household Income`, y = `Serious Violent Crimes (per 100,000 Population), 2018-2022`)) +
  geom_point(color = "white", size = 3) +
+ geom_smooth(method = "lm", se = FALSE, color = "red") +
  labs(title = "Scatter Plot of Dependent vs. Independent Variable",
      x = "Median Income",
      y = "# of Serious Crimes (per 100,000)") +
@@ -118,6 +119,9 @@ income_vs_crime_plot <- ggplot(merged_df, aes(x = `Median Household Income`, y =
 ggsave("income_vs_crime_plot.png", income_vs_crime_plot, width = 10, height = 6) 
 glimpse(cleaned_records)
 glimpse(cleaned_medincrecords)
+
+model <- lm(`Median Household Income` ~ `Serious Violent Crimes (per 100,000 Population), 2018-2022`, merged_df)
+summary(model) #$r.squared
 
 ```
 
