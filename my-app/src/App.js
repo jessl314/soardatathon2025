@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import DataPage from './pages/DataPage';
 import CrimeStatsPage from './pages/CrimeStatsPage';
-import DemographicsPage from './pages/DemographicsPage';
 import TrendsPage from './pages/TrendsPage';
-import ResourcesPage from './pages/ResourcesPage';
+import ConclusionPage from './pages/ConclusionPage';
+import ResourcesPage from './pages/ResourcesPage'; // Assuming you have a ResourcesPage component
 
 function App() {
   const [isDataHovered, setIsDataHovered] = useState(false);
@@ -29,8 +29,8 @@ function App() {
               {isDataHovered && (
                 <div className="dropdown-content">
                   <Link to="/data/crime-stats">Crime Statistics</Link>
-                  <Link to="/data/demographics">Demographics</Link>
                   <Link to="/data/trends">Trends Analysis</Link>
+                  <Link to="/data/conclusion">Conclusion</Link>
                 </div>
               )}
             </div>
@@ -42,9 +42,9 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/data" element={<DataPage />} />
           <Route path="/data/crime-stats" element={<CrimeStatsPage />} />
-          <Route path="/data/demographics" element={<DemographicsPage />} />
           <Route path="/data/trends" element={<TrendsPage />} />
-          <Route path="/resources" element={<ResourcesPage/>} />
+          <Route path="/data/conclusion" element={<ConclusionPage />} />
+          <Route path="/resources" element={<ResourcesPage />} />
           {/* Add more routes as needed */}
         </Routes>
       </div>
