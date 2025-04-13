@@ -1,0 +1,102 @@
+.crime-stats-page {
+  padding: 60px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-section {
+  margin-bottom: 60px;
+}
+
+.content-section h1 {
+  color: #001d3d;
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.dataset-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.dataset-title {
+  color: #001d3d;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #001d3d;
+}
+
+.dataset-content {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.image-container {
+  flex: 0 0 45%;
+}
+
+.dataset-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text-container {
+  flex: 0 0 55%;
+  text-align: left;
+}
+
+.text-container h3 {
+  color: #001d3d;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.text-container p {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.text-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.text-container li {
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+}
+
+.text-container li:before {
+  content: "•";
+  color: #001d3d;
+  position: absolute;
+  left: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .dataset-content {
+    flex-direction: column;
+  }
+
+  .image-container,
+  .text-container {
+    flex: 0 0 100%;
+  }
+
+  .image-container {
+    margin-bottom: 600px;
+  }
+} 
