@@ -81,8 +81,9 @@ section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
-  max-width: 1200px;
-  padding: 0 10px;
+  max-width: 100%;
+  padding: 0 5px;
+  justify-content: center;
 }
 
 .team-member {

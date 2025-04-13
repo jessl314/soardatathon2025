@@ -7,6 +7,7 @@ import CrimeStatsPage from './pages/CrimeStatsPage';
 import TrendsPage from './pages/TrendsPage';
 import ConclusionPage from './pages/ConclusionPage';
 import ResourcesPage from './pages/ResourcesPage'; // Assuming you have a ResourcesPage component
+import LogoImage from './images/logosoar.PNG';
 
 function App() {
   const [isDataHovered, setIsDataHovered] = useState(false);
@@ -16,6 +17,7 @@ function App() {
       <div className="App">
         <nav className="navbar">
           <div className="logo">
+            <img src={LogoImage} alt = "logo"></img>
             <Link to="/">Fault Lines</Link>
           </div>
           <div className="nav-links">
