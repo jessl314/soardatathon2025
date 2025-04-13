@@ -77,12 +77,11 @@ cleaned_medincrecords$Name <- gsub("Unincorporated - ", "", cleaned_medincrecord
 
 
 ```{r}
-
-
-ggplot(cleaned_records, aes(x = Name, y = `Serious Violent Crimes (per 100,000 Population), 2018-2022`)) +
+crimes_per_city_plot <- ggplot(cleaned_records, aes(x = Name, y = `Serious Violent Crimes (per 100,000 Population), 2018-2022`)) +
   geom_col(fill = "darkslategray4") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8)) +
   labs(title = "Amount of Crimes (per 100,000 people, 2018-2019) in Different Cities Across LA County", x = "City", y = "Number of Crimes")
+ggsave("crimes_per_city_plot.png", crimes_per_city_plot, width = 10, height = 6)
 
 ```
 
