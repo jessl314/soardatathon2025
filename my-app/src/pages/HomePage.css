@@ -5,7 +5,6 @@ html {
 .home-page {
   padding: 0;
   background-color: #01184f ;
-  font-family:'Courier New', Courier, monospace;
 }
 
 p {
@@ -21,36 +20,39 @@ h2 {
 }
 
 section {
-  padding: 80px 20px;
+  padding: 40px 20px;
+  min-height: auto;
   margin: 0;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .hero-section {
-  color: #bf5f5b;
-  text-align: left;
+  min-height: 50vh;
+  padding-top: 10px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
   position: relative;
-  background-image: url('crime-scene2-Picsart-AiImageEnhancer.jpg');
+  background-color: #01184f;
+  background-image: url('./crime-scene2-Picsart-AiImageEnhancer.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  text-shadow: 
-    -1px -1px 1px #01184f,
-    -1px 1px 1px #01184f,
-    1px -1px 1px #01184f,
-    1px 1px 1px #01184f;
-  font-size: 2rem;
+  z-index: 2;
 }
 
 .hero-section h1 {
-  font-size: 5rem;
+  margin-top: 20px;
+  font-size: 3.5rem;
   margin-bottom: 20px;
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
-  color: #d8a5a4;
+  color: white;
 }
 
 .hero-section p {
@@ -63,22 +65,24 @@ section {
 .team-section {
   background-color: #01184f;
   text-align: center;
-  padding: 100px 20px;
+  padding: 60px 20px;
   color: #bf5f5b
 }
 
 .team-intro {
   color: white;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+  gap: 30px;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 .team-member {
@@ -89,9 +93,9 @@ section {
 }
 
 .member-image {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 20px;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 15px;
   border-radius: 50%;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -109,12 +113,13 @@ section {
 
 .member-info h3 {
   color: #bf5f5b;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .member-info p {
   color: white;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
 .impact-section, .our-mission-section {
@@ -126,6 +131,7 @@ section {
   background-color: #01184f;
   color: #bf5f5b;
   align-items: center;
+  padding: 40px 20px;
 }
 
 @keyframes fadeIn {
@@ -151,7 +157,7 @@ section {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   section {
-    padding: 60px 15px;
+    padding: 30px 15px;
   }
 
   .hero-section h1 {
@@ -160,7 +166,7 @@ section {
 
   .team-grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+    gap: 20px;
   }
 
   .member-image {
@@ -232,16 +238,136 @@ section {
 }
 
 .info-section h2 {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-size: 2rem;
   color: #bf5f5b;
 }
 
 .info-section p {
   color: white;
-  max-width: 800px;
-} 
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .team-grid {
   text-emphasis-color: #f2f2eb;
+}
 
+/* Add these new styles */
+.linkedin-link {
+  color: #bf5f5b; /* Keep the original color */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.linkedin-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #bf5f5b;
+  transition: width 0.3s ease;
+}
+
+.linkedin-link:hover {
+  color: #d17571; /* Slightly lighter shade for hover */
+}
+
+.linkedin-link:hover::after {
+  width: 100%;
+}
+
+/* Add this gradient section after your hero section */
+.gradient-section {
+  height: 200px; /* Adjust height as needed */
+  background: linear-gradient(to bottom, #01184f 0%, white 100%);
+  margin-top: -50px; /* Overlap with hero section to hide sharp transition */
+  position: relative;
+  z-index: 1;
+}
+
+/* Update your content section to have white background */
+.content-section {
+  background-color: white;
+  position: relative;
+  z-index: 3;
+  padding-top: 20px;
+}
+
+/* Add these new styles for better content organization */
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h2 {
+  margin-bottom: 25px; /* Reduced spacing after headings */
+}
+
+/* Add this new style for the mission section */
+.our-mission-section {
+  padding: 40px 20px;
+}
+
+.mission-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mission-content p {
+  margin-bottom: 20px; /* Add space between paragraphs */
+}
+
+/* Add this new style for the impact section */
+.impact-section {
+  padding: 40px 20px;
+}
+
+.impact-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mission-image-container {
+  width: 100%;
+  max-width: 1600px; /* Increased from 1200px for a larger image */
+  margin: 0 auto 40px;
+  padding: 0 20px;
+}
+
+.mission-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  margin-bottom: 40px;
+}
+
+.mission-section {
+  padding: 60px 0;
+  background-color: white;
+  color: #01184f;
+}
+
+.mission-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.mission-content h2 {
+  color: #01184f;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.mission-content p {
+  color: #01184f;
+  margin-bottom: 20px;
+  line-height: 1.8;
 }
