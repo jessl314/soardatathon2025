@@ -1,0 +1,276 @@
+.resources-page {
+  padding: 40px;
+  background-color: #f3f8fc;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #333;
+}
+
+.intro-section {
+  margin-bottom: 60px;
+  background-color: #e9f4fe;
+}
+
+.intro-section h1 {
+  color: #001d3d;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.resources-section {
+  margin-bottom: 60px;
+}
+
+.resources-section h2 {
+  color: #001d3d;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #001d3d;
+}
+
+.resource-category {
+  margin-bottom: 40px;
+}
+
+.resource-category h3 {
+  color: #001d3d;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.resource-category ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.resource-category li {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  background-color: #003566;
+}
+
+.resource-category a {
+  color: #003566;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.resource-category a:hover {
+  color: #001d3d;
+  text-decoration: underline;
+}
+
+.final-notes {
+  background-color: #d9ecff;
+  padding: 40px;
+  border-radius: 8px;
+  margin-top: 60px;
+  color: white;
+}
+
+.final-notes h2 {
+  color: #001d3d;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.final-notes p {
+  color: #001d3d;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Add these styles to your ResourcesPage.css */
+.emergency-help {
+  background-color: #f3f8fc;
+  padding: 60px 20px;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.emergency-help h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #001d3d;
+}
+
+.help-intro {
+  color: #666;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.emergency-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.emergency-card {
+  background-color: #01184f;
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.emergency-card:hover {
+  transform: translateY(-5px);
+}
+
+.emergency-card.wide {
+  grid-column: 1 / -1;
+  background-color: #01184f;
+  color: white;
+}
+
+.emergency-card.wide h3,
+.emergency-card.wide .emergency-number {
+  color: white;
+}
+
+.emergency-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.emergency-card h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.emergency-number {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.emergency-card p {
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.emergency-card.wide p {
+  color: #fff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .resources-page {
+    padding: 20px;
+  }
+
+  .intro-section h1 {
+    font-size: 2rem;
+  }
+
+  .resource-category h3 {
+    font-size: 1.3rem;
+  }
+
+  .emergency-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .emergency-help h2 {
+    font-size: 2rem;
+  }
+
+  .emergency-number {
+    font-size: 1.8rem;
+  }
+}
+
+/* Add these new styles for the category tabs */
+.category-tabs {
+  display: space-between;
+  justify-content: center;
+  gap: 2px;
+  margin-bottom: 40px;
+  background-color: #e9f4fe;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.tab {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #666;
+  border-radius: 6px;
+}
+
+.tab:hover {
+  background-color: rgba(1, 24, 79, 0.1);
+}
+
+.tab.active {
+  background-color: #01184f;
+  color: white;
+}
+
+.category-content {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.category-content h2 {
+  color: #01184f;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.resource-category ul li {
+  background-color: #e9f3fd;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resource-category ul li strong {
+  display: block;
+  font-size: 1.2rem;
+  color: #01184f;
+  margin-bottom: 10px;
+}
+
+.resource-category ul li p {
+  margin: 10px 0;
+  color: #666;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Update existing styles as needed */ 
