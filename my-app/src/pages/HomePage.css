@@ -4,7 +4,7 @@ html {
 
 .home-page {
   padding: 0;
-  background-color: #f2f2eb;
+  background-color: #d2dce6;
 }
 
 section {
@@ -17,10 +17,10 @@ section {
 }
 
 .hero-section {
-  color: white;
+  color: #d2dce6;
   text-align: left;
   position: relative;
-  background-image: url('crime-scene.jpeg');
+  background-image: url('crime-scene2-Picsart-AiImageEnhancer.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

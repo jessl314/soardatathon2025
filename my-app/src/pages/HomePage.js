@@ -30,7 +30,7 @@ function HomePage() {
     <div className="home-page">
       <section className="hero-section">
         <h1>Fault Lines</h1>
-        <p>Using data to visualize the impacts of wealth inequity in Los Angeles</p>
+        <p>Comprehensive insights into crime statistics and trends</p>
       </section>
 
       <section className="our-mission-section">
