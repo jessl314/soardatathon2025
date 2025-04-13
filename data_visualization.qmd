@@ -67,11 +67,22 @@ cleaned_medincrecords$Name <- gsub("Unincorporated - ", "", cleaned_medincrecord
 
 
 
+# cleaning the depression dataset
+depression_records_to_remove <- c(
+  "Percentage of Adults (Ages 18 Years and Older) with Diagnosed Depression",
+  "Lower 95% Confidence Limit",
+  "Upper 95% Confidence Limit",
+  "Relative Standard Error",
+  "Estimation Method"
+  )
+
+cleaned_depression_records <- depression |>
+  filter(!if_all(all_of(depression_records_to_remove), ~ . == "NA"))
+print(cleaned_depression_records)
 
 
-
-
-
+cleaned_depression_records$Name <- gsub("City of ", "", cleaned_depression_records$Name)
+cleaned_depression_records$Name <- gsub("Unincorporated - ", "", cleaned_depression_records$Name)
 
 
 ```
@@ -102,7 +113,7 @@ median_income_plot <- ggplot(cleaned_medincrecords, aes(x = Name, y = `Median Ho
 ggsave("median_income_plot.png", median_income_plot, width = 10, height = 6) 
   
 ```
-
+#  geom_smooth(method = "lm", se = FALSE, color = "cadetblue1") +
 
 # plot for income vs crime
 ``` {r}
@@ -110,18 +121,50 @@ library(ggplot2)
 library(dplyr)
 merged_df <- left_join(cleaned_medincrecords, cleaned_records, by = "Name")
 income_vs_crime_plot <- ggplot(merged_df, aes(x = `Median Household Income`, y = `Serious Violent Crimes (per 100,000 Population), 2018-2022`)) +
- geom_point(color = "white", size = 3) +
- geom_smooth(method = "lm", se = FALSE, color = "red") +
- labs(title = "Scatter Plot of Dependent vs. Independent Variable",
+ geom_point(color = "blue4", size = 3) +
+ labs(title = "Median Income vs. # of Serious Crimes",
      x = "Median Income",
      y = "# of Serious Crimes (per 100,000)") +
-  theme_minimal()
+  theme_minimal() +
+  theme(
+    plot.background = element_rect(fill = "white", color = "white")
+  )
 ggsave("income_vs_crime_plot.png", income_vs_crime_plot, width = 10, height = 6) 
 glimpse(cleaned_records)
 glimpse(cleaned_medincrecords)
 
-model <- lm(`Median Household Income` ~ `Serious Violent Crimes (per 100,000 Population), 2018-2022`, merged_df)
-summary(model) #$r.squared
+#model <- lm(`Median Household Income` ~ `Serious Violent Crimes (per 100,000 Population), 2018-2022`, merged_df)
+#summary(model) #$r.squared
+correlation_test <- cor.test(merged_df$`Median Household Income`, merged_df$`Serious Violent Crimes (per 100,000 Population), 2018-2022`,
+                             method = "pearson") 
+r_value <- correlation_test$estimate
+
+print(r_value)
 
 ```
+
+```{r}
+merged_depinc <- left_join(cleaned_medincrecords, cleaned_depression_records, by = "Name")
+income_vs_depression_plot <- ggplot(merged_depinc, aes(x = `Median Household Income`, y = `Percentage of Adults (Ages 18 Years and Older) with Diagnosed Depression`)) +
+  geom_point(color = "blue4", size = 3) +
+  labs(title = "Median Income vs. % of Adults with Depression",
+     x = "Median Income",
+     y = "% of Adults with Depression") +
+  theme_minimal() +
+  theme(
+    plot.background = element_rect(fill = "white", color = "white")
+  )
+ggsave("income_vs_depression_plot.png", income_vs_depression_plot, width = 10, height = 6) 
+
+#model2 <- lm(`Median Household Income` ~ `Percentage of Adults (Ages 18 Years and Older) with Diagnosed Depression`, merged_depinc)
+#summary(model2) #$r.squared
+
+correlation_test2 <- cor.test(merged_depinc$`Median Household Income`, merged_depinc$`Percentage of Adults (Ages 18 Years and Older) with Diagnosed Depression`,
+                             method = "pearson") 
+
+r_value2 <- correlation_test2$estimate
+
+print(r_value2)
+```
+
 
