@@ -1,0 +1,8 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+crime-stats-page {
+    padding: 0;
+    background-color: black;
+  }
