@@ -79,4 +79,23 @@ cleaned_medincrecords$Name <- gsub("Unincorporated - ", "", cleaned_medincrecord
 ```{r}
 
 ```
+#  scale_x_discrete(guide = guide_axis(n.dodge = 2))
+```{r}
+library(ggplot2)
 
+
+median_income_plot <- ggplot(cleaned_medincrecords, aes(x = Name, y = `Median Household Income`)) + 
+  geom_col(fill = "darkslategray4") +
+  labs(title = "Median Income by City",
+       x = "City",
+       y = "Median Income ($) per 100,000") +
+  theme_minimal(base_size = 10) + 
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1, size = 8))
+ggsave("median_income_plot.png", median_income_plot, width = 10, height = 6) 
+  
+```
+
+# panel.background = element_rect(fill = my_background_color), 
+# panel.grid.major = element_line(color = my_background_color), 
+#panel.grid.minor = element_line(color = my_background_color),
