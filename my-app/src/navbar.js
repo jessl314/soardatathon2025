@@ -12,15 +12,16 @@ function Navbar() {
         display: 'flex',
         justifyContent: 'space-between',
         padding: '20px 40px',
-        backgroundColor: '#f7364a',
-        color: '#f1e9dd',
+        backgroundColor: '#01184f',
+        color: '#bf5f5b',
         fontFamily: 'Arial, sans-serif',
+        
     };
     const regionStyle = {
         padding: '10px 20px',
         cursor: 'pointer',
-        backgroundColor: '#f1e9dd',
-        color: '#f7364a',
+        backgroundColor: '#01184f',
+        color: '#bf5f5b',
         borderRadius: '10px',
         fontSize: '16px',
         textAlign: 'center',
@@ -30,8 +31,8 @@ function Navbar() {
 
     const activeRegionStyle = {
         ...regionStyle,
-        backgroundColor: '#f7364a',
-        color: '#f1e9dd', // Highlight active region
+        backgroundColor: '#01184f',
+        color: '#bf5f5b', // Highlight active region
     };
 
     return (
@@ -59,11 +60,11 @@ function Navbar() {
             </div>
 
             {/* Display content based on the active region */}
-            <div style={{ backgroundColor: '#100f0eff', padding: '20px', borderRadius: '5px', marginTop: '20px' }}>
+            <div style={{ backgroundColor: '#01184f', padding: '20px', borderRadius: '5px', marginTop: '20px' }}>
                 {regionContent[activeRegion]}
             </div>
         </div>
-    );
+    
 }
 
 export default Navbar;

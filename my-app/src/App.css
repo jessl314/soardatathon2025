@@ -44,6 +44,7 @@
   justify-content: space-between;
   align-items: center;
   font-family: 'Times-Roman', Bold;
+  color: #bf5f5b;
 }
 
 .logo {
@@ -51,7 +52,7 @@
 }
 
 .logo a {
-  color: #fff;
+  color: #bf5f5b;
   text-decoration: none;
   font-weight: bold;
 }
@@ -62,13 +63,13 @@
 }
 
 .nav-links a {
-  color: #fff;
+  color: #bf5f5b;
   text-decoration: none;
   font-size: 1.1rem;
 }
 
 .nav-links a:hover {
-  color: #ddd;
+  color: #bf5f5b;
 }
 
 .dropdown {
