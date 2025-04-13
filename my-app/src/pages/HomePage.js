@@ -29,20 +29,21 @@ function HomePage() {
   return (
     <div className="home-page">
       <section className="hero-section">
-        <h1>Crime Rate Analysis</h1>
+        <h1>Fault Lines</h1>
         <p>Comprehensive insights into crime statistics and trends</p>
       </section>
 
       <section className="our-mission-section">
         <h2>Our Mission</h2>
         <div className="mission-content">
-          <p>We are dedicated to providing accurate and timely crime data to help communities stay informed.</p>
+          <p>LA is a beautiful city, full of cultural landmarks and natural landscapes, as well as housing one of the most diverse populations in the US. However, in all of LA’s majesty, the city still struggles with issues of poverty and wealth inequality. These then exacerbate other issues of mental health and violent crime, which propel the cycle of poverty and subpar living conditions.
+          </p>
         </div>
       </section>
 
       <section className="team-section">
         <h2>Who We Are</h2>
-        <p className="team-intro">Meet the dedicated professionals behind our mission</p>
+        <p className="team-intro">Meet the dedicated students behind our mission</p>
         <div className="team-grid">
           {teamMembers.map((member, index) => (
             <div className="team-member" key={index}>
