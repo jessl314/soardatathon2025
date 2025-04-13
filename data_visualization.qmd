@@ -1,0 +1,87 @@
+---
+title: "test data"
+format: html
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+```{r}
+library(tidyverse)
+
+# removes fully empty columns
+columns_to_remove <- c(
+  "Serious Violent Crimes (per 100,000 Population), 2022",
+ "Lower 95% Confidence Limit, 2022",
+ "Upper 95% Confidence Limit, 2022",
+ "Relative Standard Error, 2022"
+)
+
+cleaned_data <- crimes |>
+ select(-all_of(columns_to_remove))
+
+print("\nCleaned Data (with selected columns):")
+print(cleaned_data)
+
+print("\nNames of cleaned data:")
+print(names(cleaned_data))
+
+glimpse(cleaned_data)
+
+
+
+# remove records with the 4 empty values
+
+records_to_remove <- c(
+  "Serious Violent Crimes (per 100,000 Population), 2018-2022",
+  "Lower 95% Confidence Limit, 2018-2022",
+  "Upper 95% Confidence Limit, 2018-2022",
+  "Relative Standard Error, 2018-2022"
+)
+
+cleaned_records <- cleaned_data %>%
+  filter(!if_all(all_of(records_to_remove), ~ . == "NA"))
+print(cleaned_records)
+
+cleaned_records$Name <- gsub("City of ", "", cleaned_records$Name)
+cleaned_records$Name <- gsub("Unincorporated - ", "", cleaned_records$Name)
+
+medincrecords_to_remove <- c(
+  "Median Household Income",
+  "Lower 95% Confidence Limit",
+  "Upper 95% Confidence Limit",
+  "Relative Standard Error"
+)
+
+cleaned_medincrecords <- median_income %>%
+  filter(!if_all(all_of(medincrecords_to_remove), ~ . == "NA"))
+print(cleaned_medincrecords)
+
+cleaned_medincrecords$Name <- gsub("City of ", "", cleaned_medincrecords$Name)
+
+cleaned_medincrecords$Name <- gsub("Unincorporated - ", "", cleaned_medincrecords$Name)
+
+
+
+
+
+
+
+
+
+
+```
+
+
+```{r}
+crimes_per_city_plot <- ggplot(cleaned_records, aes(x = Name, y = `Serious Violent Crimes (per 100,000 Population), 2018-2022`)) +
+  geom_col(fill = "darkslategray4") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1, size = 8)) +
+  labs(title = "Amount of Crimes (per 100,000 people, 2018-2019) in Different Cities Across LA County", x = "City", y = "Number of Crimes")
+ggsave("crimes_per_city_plot.png", crimes_per_city_plot, width = 10, height = 6)
+
+```
+
