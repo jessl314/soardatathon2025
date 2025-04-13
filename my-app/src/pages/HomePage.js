@@ -30,20 +30,18 @@ function HomePage() {
     <div className="home-page">
       <section className="hero-section">
         <h1>Fault Lines</h1>
-        <p>Comprehensive insights into crime statistics and trends</p>
       </section>
-
       <section className="our-mission-section">
         <h2>Our Mission</h2>
         <div className="mission-content">
           <p>LA is a beautiful city, full of cultural landmarks and natural landscapes, as well as housing one of the most diverse populations in the US. However, in all of LA’s majesty, the city still struggles with issues of poverty and wealth inequality. These then exacerbate other issues of mental health and violent crime, which propel the cycle of poverty and subpar living conditions.</p>
-          <p>In Fault Lines, we aim to express these inequities with data collected by California Health Projects, and by overlaying these sets, we can find the areas most impacted by socio-economic inequity. We focus on 3 main datasets to assess: median income, violent crime rate per 100000, and the rate of adults with depression PER NUMBER. With these key datasets, all measured by counties in LA, we can visualise an image of how wealth and wealth gaps correlate with general life quality. Finally, we use this data to highlight communities which need more resources and support to promote economic growth and general welfare; and we link some of these grassroots efforts in order to offer help in these areas.</p>
+          <p>In Fault Lines, we aim to express these inequities with data collected by California Health Projects, and by overlaying these sets, we can find the areas most impacted by socio-economic inequity. We focus on three main datasets to assess: median income, violent crime rate per one hundred thousand, and the rate of adults with depression PER NUMBER. With these key datasets, all measured by counties in LA, we can visualise an image of how wealth and wealth gaps correlate with general life quality. Finally, we use this data to highlight communities which need more resources and support to promote economic growth and general welfare; and we link some of these grassroots efforts in order to offer help in these areas.</p>
         </div>
       </section>
 
       <section className="team-section">
         <h2>Who We Are</h2>
-        <p className="team-intro">Fault Lines is a ragtag group of students all united by our drive to learn about data literacy. We come from all different backgrounds and levels of skill in programming, but together we were able to create this website in just 36 hours at UCI’s annual datathon. We aligned on our interests in mental health and using data as a tool to spread awareness${','} which allowed us to conceive this project.</p>
+        <p className="team-intro">Fault Lines is a ragtag group of students all united by our drive to learn about data literacy. We come from all different backgrounds and levels of skill in programming, but together we were able to create this website in just 36 hours at UCI’s annual datathon. We aligned on our interests in mental health and using data as a tool to spread awareness{','} which allowed us to conceive this project.</p>
         <div className="team-grid">
           {teamMembers.map((member, index) => (
             <div className="team-member" key={index}>
@@ -62,13 +60,13 @@ function HomePage() {
       <section className="impact-section">
         <h2>Our Impact</h2>
         <div className="impact-content">
-          <p>Through data analysis and community engagement, we're making a difference in understanding and addressing crime rates and mental health epidemics. With our website, policymakers and grassroot organizers can view which neighborhoods need more support and resources, and this could potentially allow for policy changes which could promote fairly distributed aid and welfare. In addition, we added some resources local to these zones of lower development which residents can use to get access to healthcare, food, shelter, and other basic needs</p>
+          <p>Through data analysis and community engagement, we're making a difference in understanding and addressing crime rates and mental health epidemics. With our website, policymakers and grassroot organizers can view which neighborhoods need more support and resources, and this could potentially allow for policy changes which could promote fairly distributed aid and welfare. In addition, we added some resources local to these zones of lower development which residents can use to get access to healthcare, food, shelter, and other basic needs. </p>
         </div>
       </section>
 
       <section className="info-section">
         <h2>Methodology</h2>
-        <p>Our project was made possible with datasets published by California Health Projects, who have published a master list of reputable sources delineating California health data, which is organized by county. We used their datasets on violent crime rate per 100000 people, as well as information on household median income and percent of adults diagnosed with depression per county. We cleaned and processed these datasets, then used python to visualize this information in graphs and charts. These charts, alongside research about socioeconomic conditions and perpetual loops of poverty, informed us to create our final project: Fault Lines.</p>
+        <p>Our project was made possible with datasets published by California Health Projects, who have published a master list of reputable sources delineating California health data, which is organized by county. We used their datasets on violent crime rate per one hundred thousand people, as well as information on household median income and percent of adults diagnosed with depression per county. We cleaned and processed these datasets, then used Python to visualize this information in graphs and charts. These charts, alongside research about socioeconomic conditions and perpetual loops of poverty, informed us to create our final project: Fault Lines.</p>
       </section>
     </div>
   );

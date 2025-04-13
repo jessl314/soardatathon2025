@@ -4,7 +4,20 @@ html {
 
 .home-page {
   padding: 0;
-  background-color: #d2dce6;
+  background-color: #01184f ;
+  font-family:'Courier New', Courier, monospace;
+}
+
+p {
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 30px;
 }
 
 section {
@@ -17,38 +30,45 @@ section {
 }
 
 .hero-section {
-  color: #d2dce6;
+  color: #bf5f5b;
   text-align: left;
   position: relative;
   background-image: url('crime-scene2-Picsart-AiImageEnhancer.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  text-shadow: 
+    -1px -1px 1px #01184f,
+    -1px 1px 1px #01184f,
+    1px -1px 1px #01184f,
+    1px 1px 1px #01184f;
+  font-size: 2rem;
 }
 
 .hero-section h1 {
-  font-size: 3.5rem;
+  font-size: 5rem;
   margin-bottom: 20px;
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
+  color: #d8a5a4;
 }
 
 .hero-section p {
   font-size: 1.4rem;
-  max-width: 600px;
+  max-width: 10px;
   opacity: 0;
   animation: fadeIn 1s ease-in 0.5s forwards;
 }
 
 .team-section {
-  background-color: #f8f9fa;
+  background-color: #01184f;
   text-align: center;
   padding: 100px 20px;
+  color: #bf5f5b
 }
 
 .team-intro {
-  font-size: 1.2rem;
-  color: #666;
+  color: white;
   margin-bottom: 60px;
 }
 
@@ -88,24 +108,24 @@ section {
 }
 
 .member-info h3 {
-  color: #401B1B;
+  color: #bf5f5b;
   margin-bottom: 8px;
-  font-size: 1.4rem;
 }
 
 .member-info p {
-  color: #666;
+  color: white;
   font-size: 1.1rem;
 }
 
 .impact-section, .our-mission-section {
   background-color: white;
-  color: #401B1B;
+  color: #01184f;
 }
 
 .info-section {
-  background-color: #401B1B;
-  color: #f2f2eb;
+  background-color: #01184f;
+  color: #bf5f5b;
+  align-items: center;
 }
 
 @keyframes fadeIn {
@@ -167,7 +187,7 @@ section {
 }
 
 .who-we-are {
-  background-color: #401B1B;
+  background-color: #01184f;
   color: white;
   padding: 40px 20px;
   margin: 40px 0;
@@ -199,7 +219,7 @@ section {
 }
 
 .read-more {
-  background-color: #dc3545;
+  background-color: #01184f;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -208,17 +228,20 @@ section {
 }
 
 .read-more:hover {
-  background-color: #c82333;
+  background-color: #01184f;
 }
 
 .info-section h2 {
   margin-bottom: 20px;
   font-size: 2rem;
-  color: #f2f2eb;
+  color: #bf5f5b;
 }
 
 .info-section p {
-  color: #666;
-  color: #f2f2eb;
+  color: white;
   max-width: 800px;
 } 
+.team-grid {
+  text-emphasis-color: #f2f2eb;
+
+}
