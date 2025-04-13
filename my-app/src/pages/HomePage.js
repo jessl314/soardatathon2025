@@ -1,27 +1,31 @@
 import React from 'react';
 import './HomePage.css';
+import meeraImage from '../images/0.jpg'; // Adjust the path as necessary
+import arenaImage from '../images/arena.jpg'; // Adjust the path as necessary
+import sabiImage from '../images/IMG_5811.jpg';
+import jessicaImage from '../images/IMG_9505.jpeg'; // Adjust the path as necessary
 
 function HomePage() {
   const teamMembers = [
     {
       name: "Arena Galeana Oregon",
       role: "Arena is a first year student studying computer science and engineering, with a focus in biomedical engineering. She is a passionate reader and athlete when not developing websites.",
-      image: "/images/team1.jpg", // You'll need to add actual images to your public/images folder
+      image: arenaImage, // You'll need to add actual images to your public/images folder
     },
     {
       name: "Meera Phadnis",
       role: "Meera is a first year undeclared student and planning to double major in economics and data science. Outside of school, she is a skilled tennis player and robotics enthusiast.",
-      image: "/images/team2.jpg",
+      image: meeraImage,
     },
     {
       name: "Jessica Liao",
       role: "Jessica is a second year majoring in computer science, with a minor in statistics. She is also an avid anime and tv enthusiast, as well as dabbling in crafting and crochet.",
-      image: "/images/team3.jpg",
+      image: jessicaImage,
     },
     {
       name: "Sabella Habtemariam",
       role: "Sabi is an undeclared first year, aiming to major in data science with a minor in philosophy. She loves to read in her spare time, as well as listening to music for her radio show. ",
-      image: "/images/team3.jpg",
+      image: sabiImage,
     },
     // Add more team members as needed
   ];
